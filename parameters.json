@@ -1,0 +1,11 @@
+{
+    "InputFolders":{
+        "Paintings":"./Images/Paintings/",
+        "Photos":"./Images/Photos/",
+        "Pictures":"./Images/Paintings/"
+    },
+    "OutputBucket":{
+        "BucketName":""
+    }
+
+}
