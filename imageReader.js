@@ -3,9 +3,8 @@ const fs = require("fs")
 const rekognition = new AWS.Rekognition({ region: 'us-east-1' })
 const parameters = require("./parameters.json")
 
-const { InputFolders, OutputFolders } = parameters
+const { InputFolders, OutputBucket } = parameters
 Object.keys(InputFolders).forEach(type => {
-    console.log(InputFolders[type])
     const folder = InputFolders[type]
     fs.readdir(folder, (err, files)=>{
         if(err){
@@ -25,6 +24,7 @@ Object.keys(InputFolders).forEach(type => {
                     MaxLabels: 10,
                     MinConfidence: 77
                 }
+                // Using rekognition APIs for image analysis
                 rekognition.detectLabels(param, function (err, data) {
                     if (err) {
                         console.log(err)
