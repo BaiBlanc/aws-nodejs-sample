@@ -30,6 +30,13 @@ Object.keys(InputFolders).forEach(type => {
                         console.log(err)
                     } else {
                         console.log(data)
+                        var stringData = JSON.stringify(data)
+                        stringData = stringData.replace(/,/g, ",\n")
+                        fs.writeFile(file+".json", stringData, (err)=>{
+                            if(err){
+                                console.error(err)
+                            }
+                        })
                     }
                 })
             })
