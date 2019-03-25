@@ -3,7 +3,7 @@ const fs = require("fs")
 const rekognition = new AWS.Rekognition({ region: 'us-east-1' })
 const parameters = require("./parameters.json")
 
-const { InputFolders, OutputBucket } = parameters
+const { InputFolders } = parameters
 Object.keys(InputFolders).forEach(type => {
     const folder = InputFolders[type]
     fs.readdir(folder, (err, files)=>{
@@ -37,6 +37,7 @@ Object.keys(InputFolders).forEach(type => {
                                 console.error(err)
                             }
                         })
+                        // Upload object to S3
                     }
                 })
             })
