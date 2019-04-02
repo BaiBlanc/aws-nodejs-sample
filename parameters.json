@@ -2,7 +2,7 @@
     "InputFolders":{
         "Paintings":"./Images/Paintings/",
         "Photos":"./Images/Photos/",
-        "Pictures":"./Images/Paintings/"
+        "Pictures":"./Images/Pictures/"
     },
     "OutputBucket":{
         "BucketName":""
