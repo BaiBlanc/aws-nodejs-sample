@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "atob": "^2.1.2",
     "aws-sdk": "^2.425.0",
+    "btoa": "^1.2.1",
     "uuid": "^3.3.2"
   },
   "name": "aws-nodejs-sample",

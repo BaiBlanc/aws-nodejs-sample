@@ -4,10 +4,9 @@ const parameters = require("./parameters.json")
 
 const {OutputBucket: {BucketName}, } = parameters
 const uploadFile =(data) => {
-    var stringData = JSON.stringify(data)
-        stringData = stringData.replace(/,/g, ",\n")
+    
         var params = {
-            Body: JSON.stringify(stringData),
+            Body: JSON.stringify(data),
             Bucket: BucketName,
             Key: "haha.txt"
         }
@@ -15,7 +14,7 @@ const uploadFile =(data) => {
             if (err) console.log(err, err.stack) // an error occurred
             else{
                 console.log("Successfully uploaded data to " + bucketName + "/" + keyName);
-                console.log(data)        // successful response
+                 // successful response
             } 
         })
 }
